@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#CD0000</color>
+    <color name="darkblack">#CD000000</color>
+    <color name="hintColor">#989898</color>
+    <color name="name_color">#00A1FF</color>
+    <color name="app_color">#005B90</color>
+    <color name="recView">#B5FFFFFF</color>
+    <color name="gradiant_color">#98D1F2</color>
+    <color name="cardView">#79FFFFFF</color>
+    <color name="inside">#B4BDBD</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+</resources>

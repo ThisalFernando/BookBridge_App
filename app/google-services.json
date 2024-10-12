@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "880282324857",
+    "project_id": "bookdonationapp-36c29",
+    "storage_bucket": "bookdonationapp-36c29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880282324857:android:524d2a4002bba8372da9a8",
+        "android_client_info": {
+          "package_name": "com.example.bookdonationapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCuhWVCqu0zyPE_fKpmtE4n-pYWe0jHXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

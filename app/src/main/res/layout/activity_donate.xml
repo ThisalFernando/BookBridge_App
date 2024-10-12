@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgimage02"
+    android:backgroundTint="@color/darkblack"
+    android:backgroundTintMode="src_over"
+    tools:context=".DonateActivity"
+    tools:layout_editor_absoluteX="16dp"
+    tools:layout_editor_absoluteY="100dp">
+
+    <View
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="@drawable/button_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+    <ImageView
+        android:id="@+id/homeIcon"
+        android:layout_width="47dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/footer"
+        app:layout_constraintVertical_bias="0.466"
+        app:srcCompat="@drawable/home_icon" />
+
+    <ImageView
+        android:id="@+id/bookIcon"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toEndOf="@+id/homeIcon"
+        app:layout_constraintTop_toTopOf="@+id/footer"
+        app:layout_constraintVertical_bias="0.454"
+        app:srcCompat="@drawable/book_icon_on" />
+
+    <ImageView
+        android:id="@+id/payIcon"
+        android:layout_width="50dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/footer"
+        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintStart_toEndOf="@+id/bookIcon"
+        app:layout_constraintTop_toTopOf="@+id/footer"
+        app:layout_constraintVertical_bias="0.428"
+        app:srcCompat="@drawable/pay_icon" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="42dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/footer"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/payIcon"
+        app:layout_constraintTop_toTopOf="@+id/footer"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/user_icon" />
+
+    <View
+        android:id="@+id/bookView"
+        android:layout_width="380dp"
+        android:layout_height="175dp"
+        android:background="@drawable/recycler_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/handOnTxt"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <TextView
+        android:id="@+id/handOnTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hand on Donation"
+        android:textColor="@color/name_color"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <View
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="178dp"
+        android:background="@drawable/header"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-1dp" />
+
+    <ImageView
+        android:id="@+id/arrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="@+id/headerView"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.103"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/welcomeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make Your \nDonation"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="@+id/headerView"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/username"
+        android:textColor="@color/name_color"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTxt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/bell"
+        android:layout_width="33dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="@+id/headerView"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.339"
+        app:srcCompat="@drawable/bell_icon" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.318"
+        app:shapeAppearanceOverlay="@style/circular"
+        app:srcCompat="@drawable/user_icon"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp" />
+
+
+    <TextView
+        android:id="@+id/bookGradeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/bookView"
+        app:layout_constraintStart_toEndOf="@+id/imageBook"
+        app:layout_constraintTop_toTopOf="@+id/bookView" />
+
+    <TextView
+        android:id="@+id/bookNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/bookView"
+        app:layout_constraintStart_toEndOf="@+id/imageBook"
+        app:layout_constraintTop_toBottomOf="@+id/bookGradeText" />
+
+    <TextView
+        android:id="@+id/SchoolNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bookView"
+        app:layout_constraintEnd_toEndOf="@+id/bookView"
+        app:layout_constraintStart_toEndOf="@+id/imageBook"
+        app:layout_constraintTop_toBottomOf="@+id/donateTxt"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <ImageView
+        android:id="@+id/imageBook"
+        android:layout_width="116dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="12dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/bookView"
+        app:layout_constraintStart_toStartOf="@+id/bookView"
+        app:layout_constraintTop_toTopOf="@+id/bookView"
+        app:layout_constraintVertical_bias="0.521" />
+
+    <TextView
+        android:id="@+id/donateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="will be donated to,"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/bookView"
+        app:layout_constraintStart_toEndOf="@+id/imageBook"
+        app:layout_constraintTop_toBottomOf="@+id/bookNameText" />
+
+    <TextView
+        android:id="@+id/cfrmTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get confirmation from school"
+        android:textColor="@color/name_color"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookView"
+        app:layout_constraintVertical_bias="0.079" />
+
+    <TextView
+        android:id="@+id/uploadTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload 5 images of \nyour book"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cfrmTxt"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/uploadTxt"
+        app:layout_constraintTop_toBottomOf="@+id/cfrmTxt"
+        app:layout_constraintVertical_bias="0.076"
+        app:srcCompat="@drawable/upload_icon" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cityOpt01"
+        android:layout_width="355dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/button_view"
+        android:drawableRight="@drawable/email_button_icon"
+        android:paddingLeft="150dp"
+        android:paddingRight="130dp"
+        android:text="Send"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uploadTxt" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Continue"
+        android:layout_width="355dp"
+        android:layout_height="42dp"
+        android:background="@drawable/button_view"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityOpt01"
+        app:layout_constraintVertical_bias="0.568" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

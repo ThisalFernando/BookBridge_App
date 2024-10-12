@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgimage02"
+    android:backgroundTint="@color/black"
+    android:backgroundTintMode="src_over"
+    tools:context=".HomeActivity">
+
+    <View
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="178dp"
+        android:background="@drawable/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="355dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/searchview_shape"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        app:queryHint="Search Collection Center"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.858"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@drawable/searchview_shape"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/dp"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.318"
+        app:shapeAppearanceOverlay="@style/circular"
+        app:srcCompat="@drawable/user_icon"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/username"
+        android:textColor="@color/name_color"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTxt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/bell"
+        android:layout_width="33dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="@+id/headerView"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.339"
+        app:srcCompat="@drawable/bell_icon" />
+
+    <TextView
+        android:id="@+id/welcomeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_txt"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="@+id/headerView"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.292" />
+
+    <TextView
+        android:id="@+id/schoolTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Collection Centres"
+        android:textColor="@color/name_color"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <TextView
+        android:id="@+id/subSchoolTxt"
+        android:layout_width="360dp"
+        android:layout_height="42dp"
+        android:text="@string/subCCtxt"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/schoolTxt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/center_rv"
+        android:layout_marginTop="310dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/recycler_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Ampara -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_ampara"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_ampara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ampara"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_ampara"
+                    app:layout_constraintTop_toTopOf="@id/title_image_ampara" />
+
+                <TextView
+                    android:id="@+id/sclAddress_ampara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="12, Main Street, Ampara"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_ampara"
+                    app:layout_constraintTop_toBottomOf="@id/button_ampara" />
+
+                <TextView
+                    android:id="@+id/sclMilage_ampara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_ampara"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_ampara" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_ampara" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Badulla -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_badulla"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_badulla"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Badulla"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_badulla"
+                    app:layout_constraintTop_toTopOf="@id/title_image_badulla" />
+
+                <TextView
+                    android:id="@+id/sclAddress_badulla"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="34, Hill Road, Badulla"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_badulla"
+                    app:layout_constraintTop_toBottomOf="@id/button_badulla" />
+
+                <TextView
+                    android:id="@+id/sclMilage_badulla"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_badulla"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_badulla" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_badulla" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Colombo -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_colombo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_colombo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Colombo"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_colombo"
+                    app:layout_constraintTop_toTopOf="@id/title_image_colombo" />
+
+                <TextView
+                    android:id="@+id/sclAddress_colombo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="123, Main Street, Colombo"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_colombo"
+                    app:layout_constraintTop_toBottomOf="@id/button_colombo" />
+
+                <TextView
+                    android:id="@+id/sclMilage_colombo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_colombo"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_colombo" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_colombo" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Galle -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_galle"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="DuplicateIds,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_galle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Galle"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_galle"
+                    app:layout_constraintTop_toTopOf="@id/title_image_galle" />
+
+                <TextView
+                    android:id="@+id/sclAddress_galle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="13/B, Galle Road, Galle"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_galle"
+                    app:layout_constraintTop_toBottomOf="@id/button_galle" />
+
+                <TextView
+                    android:id="@+id/sclMilage_galle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_galle"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_galle" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_galle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Kandy -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_kandy"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_kandy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kandy"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_kandy"
+                    app:layout_constraintTop_toTopOf="@id/title_image_kandy" />
+
+                <TextView
+                    android:id="@+id/sclAddress_kandy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="456, Temple Road, Kandy"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_kandy"
+                    app:layout_constraintTop_toBottomOf="@id/button_kandy" />
+
+                <TextView
+                    android:id="@+id/sclMilage_kandy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_kandy"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_kandy" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_kandy" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Jaffna -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_jaffna"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_jaffna"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Jaffna"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_jaffna"
+                    app:layout_constraintTop_toTopOf="@id/title_image_jaffna" />
+
+                <TextView
+                    android:id="@+id/sclAddress_jaffna"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="89, Church Road, Jaffna"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_jaffna"
+                    app:layout_constraintTop_toBottomOf="@id/button_jaffna" />
+
+                <TextView
+                    android:id="@+id/sclMilage_jaffna"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_jaffna"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_jaffna" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_jaffna" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Kalutara -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_kalutara"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_kalutara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kalutara"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_kalutara"
+                    app:layout_constraintTop_toTopOf="@id/title_image_kalutara" />
+
+                <TextView
+                    android:id="@+id/sclAddress_kalutara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="27, Beach Road, Kalutara"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_kalutara"
+                    app:layout_constraintTop_toBottomOf="@id/button_kalutara" />
+
+                <TextView
+                    android:id="@+id/sclMilage_kalutara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_kalutara"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_kalutara" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_kalutara" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Kegalle -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_kegalle"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_kegalle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kegalle"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_kegalle"
+                    app:layout_constraintTop_toTopOf="@id/title_image_kegalle" />
+
+                <TextView
+                    android:id="@+id/sclAddress_kegalle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="32, Town Center, Kegalle"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_kegalle"
+                    app:layout_constraintTop_toBottomOf="@id/button_kegalle" />
+
+                <TextView
+                    android:id="@+id/sclMilage_kegalle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_kegalle"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_kegalle" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_kegalle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Kurunegala -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_kurunegala"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_kurunegala"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kurunegala"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_kurunegala"
+                    app:layout_constraintTop_toTopOf="@id/title_image_kurunegala" />
+
+                <TextView
+                    android:id="@+id/sclAddress_kurunegala"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="98, Market Street, Kurunegala"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_kurunegala"
+                    app:layout_constraintTop_toBottomOf="@id/button_kurunegala" />
+
+                <TextView
+                    android:id="@+id/sclMilage_kurunegala"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_kurunegala"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_kurunegala" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_kurunegala" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Matara -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_matara"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_matara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Matara"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_matara"
+                    app:layout_constraintTop_toTopOf="@id/title_image_matara" />
+
+                <TextView
+                    android:id="@+id/sclAddress_matara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="77, Beach Road, Matara"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_matara"
+                    app:layout_constraintTop_toBottomOf="@id/button_matara" />
+
+                <TextView
+                    android:id="@+id/sclMilage_matara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_matara"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_matara" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_matara" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Nuwara Eliya -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_nuwara_eliya"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_nuwara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nuwara Eliya"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_nuwara_eliya"
+                    app:layout_constraintTop_toTopOf="@id/title_image_nuwara_eliya" />
+
+                <TextView
+                    android:id="@+id/sclAddress_nuwara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="45, Hill Road, Nuwara Eliya"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_nuwara"
+                    app:layout_constraintTop_toBottomOf="@id/button_nuwara" />
+
+                <TextView
+                    android:id="@+id/sclMilage_nuwara"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_nuwara"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_nuwara" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_nuwara" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Ratnapura -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_ratnapura"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_ratnapura"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ratnapura"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_ratnapura"
+                    app:layout_constraintTop_toTopOf="@id/title_image_ratnapura" />
+
+                <TextView
+                    android:id="@+id/sclAddress_ratnapura"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="56, Main Street, Ratnapura"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_ratnapura"
+                    app:layout_constraintTop_toBottomOf="@id/button_ratnapura" />
+
+                <TextView
+                    android:id="@+id/sclMilage_ratnapura"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_ratnapura"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_ratnapura" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_ratnapura" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Trincomalee -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_trincomalee"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_trincomalee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Trincomalee"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_trincomalee"
+                    app:layout_constraintTop_toTopOf="@id/title_image_trincomalee" />
+
+                <TextView
+                    android:id="@+id/sclAddress_trincomalee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="12, Beach Road, Trincomalee"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_trincomalee"
+                    app:layout_constraintTop_toBottomOf="@id/button_trincomalee" />
+
+                <TextView
+                    android:id="@+id/sclMilage_trincomalee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_trincomalee"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_trincomalee" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_trincomalee" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Puttalam -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_puttalam"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_puttalam"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Puttalam"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_puttalam"
+                    app:layout_constraintTop_toTopOf="@id/title_image_puttalam" />
+
+                <TextView
+                    android:id="@+id/sclAddress_puttalam"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="24, Fort Road, Puttalam"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_puttalam"
+                    app:layout_constraintTop_toBottomOf="@id/button_puttalam" />
+
+                <TextView
+                    android:id="@+id/sclMilage_puttalam"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_puttalam"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_puttalam" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_puttalam" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- gampaha -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_gampaha"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_gampaha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Gampaha"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_gampaha"
+                    app:layout_constraintTop_toTopOf="@id/title_image_gampaha" />
+
+                <TextView
+                    android:id="@+id/sclAddress_gampaha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="24, Fort Road, Gampaha"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_gampaha"
+                    app:layout_constraintTop_toBottomOf="@id/button_gampaha" />
+
+                <TextView
+                    android:id="@+id/sclMilage_gampaha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_gampaha"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_gampaha" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_gampaha" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Mannar -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/title_image_mannar"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/go_map"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/button_mannar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mannar"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/title_image_mannar"
+                    app:layout_constraintTop_toTopOf="@id/title_image_mannar" />
+
+                <TextView
+                    android:id="@+id/sclAddress_mannar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="24, Fort Road, Mannar"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/button_mannar"
+                    app:layout_constraintTop_toBottomOf="@id/button_mannar" />
+
+                <TextView
+                    android:id="@+id/sclMilage_mannar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Open Hours: 8:00am - 7:00pm"
+                    android:textColor="@color/app_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/sclAddress_mannar"
+                    app:layout_constraintTop_toBottomOf="@id/sclAddress_mannar" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/cardView"
+                    app:layout_constraintTop_toBottomOf="@id/sclMilage_mannar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Additional locations can be added here -->
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:background="@drawable/button_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.997" />
+
+    <ImageView
+        android:id="@+id/homeIcon"
+        android:layout_width="47dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/footer"
+        app:layout_constraintVertical_bias="0.466"
+        app:srcCompat="@drawable/home_icon" />
+
+    <ImageView
+        android:id="@+id/bookIcon"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toEndOf="@+id/homeIcon"
+        app:layout_constraintTop_toTopOf="@+id/footer"
+        app:layout_constraintVertical_bias="0.454"
+        app:srcCompat="@drawable/book_icon_on" />
+
+    <ImageView
+        android:id="@+id/payIcon"
+        android:layout_width="50dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/footer"
+        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintStart_toEndOf="@+id/bookIcon"
+        app:layout_constraintTop_toTopOf="@+id/footer"
+        app:layout_constraintVertical_bias="0.428"
+        app:srcCompat="@drawable/pay_icon" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="42dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/footer"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/payIcon"
+        app:layout_constraintTop_toTopOf="@+id/footer"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/user_icon" />
+
+    <ImageView
+        android:id="@+id/arrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/headerView"
+        app:layout_constraintEnd_toEndOf="@+id/headerView"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toStartOf="@+id/headerView"
+        app:layout_constraintTop_toTopOf="@+id/headerView"
+        app:layout_constraintVertical_bias="0.103"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
